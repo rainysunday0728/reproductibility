@@ -10,7 +10,7 @@ More details can be found in [our paper]():
 
 Please cite this repository as:
 ```
-@article{jia2021test,
+@article{cheng2021test,
   title={A test},
   author={Cheng, Siyu},
   year={2021},
