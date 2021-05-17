@@ -1,0 +1,11 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|iteration|parent|children|seconds|warnings|error
+path_idf|stem|9d70ee4b1680c9d1|ff15ee5b37e34f3b|ef46db3751d8e999|1339209096|data-raw/RefBldgMediumOfficeNew2004_Chicago.idf|t18534.568134568s|927f99cd655e8b38|402145|file|vector|||0.01||
+path_epw|stem|3bb3b892b7f7b98b|98d27d48a8cb47dc|ef46db3751d8e999|-1709932628|data-raw/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw|t18534.5682189108s|d662a195572f69eb|1648753|file|vector|||0||
+read_end_use|function|f67e178db559cd97||||||||||||||
+preprocess_idf|function|b7faf8849774a7d1||||||||||||||
+.Random.seed|object|a4a731f6cc7d001d||||||||||||||
+plot_end_use|function|4e5fbbf4d0894019||||||||||||||
+job|stem|994a2eaa9695d34e|bc9f48756d5fa22e|bfb6639526f6eb6b|754647479||t18764.2898220425s|40a7edbde54be204|1638574|rds|vector|||43.35||
+tbl_end_use|stem|34e19e48863caf24|b4393796696b3849|c58c4fd501d72e39|-1812780212||t18764.2898237567s|22c69a13adfbcf00|537|rds|vector|||0.11||
+p_end_use|stem|62b3a033455f0fed|60ea3b92939e76ad|c56f78256a5d32a0|1388331090||t18764.289824952s|e0c45eb8225a3a05|60450|rds|vector|||0.06||
+paper|stem||c040f3b5e679e21a|7414c0f9f6bf58af|-1335449298||||0|file|vector|||120.97||Distill articles cannot be previewed in this version of RStudio.Please update to version 1.2.718 or higher at httpswww.rstud

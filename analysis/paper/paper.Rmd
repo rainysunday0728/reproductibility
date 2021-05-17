@@ -1,0 +1,163 @@
+---
+title: Short Paper
+author:
+  - name: Alice Anonymous
+    url: https://Where/To/Find/You
+    email: alice@example.com
+    affiliation: Some Institute
+    affiliation_url: https://Institute/Website
+    orcid_id: 0000-0000-0000-0000
+    footnote: 1
+address:
+  - code: Some Institute
+    address: Department, Street, City, State, Zip
+footnote:
+  - code: 1
+    text: "Corresponding Author"
+description: |
+  This is the description.
+  It consists of two paragraphs.
+abstract: |
+  This is the abstract.
+  It consists of two paragraphs.
+keywords:
+  - One;
+  - Two;
+  - Three;
+  - Four;
+  - Five
+date: "`r Sys.Date()`"
+journal: "An awesome journal"
+volume: 10
+issue: 4
+doi: "10.23915/distill.00010"
+slug: anonymous2018
+citation_url: https://Your/URL
+bibliography: references.bib
+csl: elsevier-with-titles.csl
+download: true
+linenumbers: true
+numbersections: true
+colorlinks: true
+link-citations: true
+biblio-style: unsrtnat
+header-includes:
+  - \biboptions{sort&compress}
+  - \hypersetup{bookmarksnumbered=true}
+output:
+  # PDF output
+  bookdown::pdf_book:
+    base_format: rticles::elsevier_article
+    keep_tex: true
+    citation_package: natbib
+  # Distill output
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    self_contained: false
+editor_options:
+  markdown:
+    wrap: 80
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    warning = FALSE,
+    message = FALSE,
+    echo = FALSE,
+    comment = "#>",
+    out.width = "100%",
+    fig.align = "center",
+    fig.path = "figures",
+    fig.pos = "!htb"
+)
+# add a 'biblio-style' option
+# otherwise 'plainnat' will always be used
+# see https://github.com/rstudio/rticles/issues/395
+if (knitr::is_latex_output()) {
+    bibstyle <- rmarkdown::metadata[["biblio-style"]]
+    if (!(is.null(bibstyle) || length(bibstyle) != 1L || anyNA(bibstyle))) {
+        bibstyle <- as.character(bibstyle)
+        options("bookdown.post.latex" = function(x) {
+          re <- "^\\\\bibliographystyle\\{plainnat\\}$"
+          sub(re, sprintf("\\\\bibliographystyle{%s}", bibstyle), x)
+        })
+    }
+}
+options(knitr.table.format = function() {
+    if (knitr::is_latex_output()) "latex" else "pandoc"
+})
+library(ggplot2)
+```
+
+```{r eval = isTRUE(rmarkdown::metadata$download) && knitr::is_html_output()}
+knitr::asis_output('<a href="paper.pdf"><b>[&#x21b7; Download PDF]</b></a>')
+```
+
+# Highlights {.unnumbered}
+
+-   First
+-   Second
+-   Third
+
+# Introduction
+
+@jia2021eplusr proposed an R package for conducting data-driven analytics with
+EnergyPlus [@crawley2001energyplus].
+
+The objectives of this paper are to:
+
+1. One
+2. Two
+
+# Methodology
+
+## Overview
+
+## Math
+
+Eq. \@ref(eq:equation) gives the definition.
+
+\begin{equation}
+  \bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
+  (\#eq:equation)
+\end{equation}
+
+# Results
+
+Fig. \@ref(fig:plot) gives a pie plot.
+
+```{r plot, fig.cap = "A pie plot"}
+targets::tar_read(p_end_use)
+```
+
+Table \@ref(tab:table) gives a result table.
+
+```{r table}
+targets::tar_read(tbl_end_use) %>% 
+  select(category, electricity_per_area) %>%
+knitr::kable(
+  caption = "A result table",
+  col.names = c("Category", "Electricity (kWh/m2)"),
+  digits = 2,
+  booktabs = TRUE, linesep = "", position = "htbp")
+```
+
+# Discussion
+
+# Conclusion
+
+# Data availability {.unnumbered}
+
+The research compendium for this article can be found at
+<https://github.com/YouName/RepoName>, hosted at GitHub.
+
+# CRediT authorship contribution statement {.unnumbered}
+
+# Acknowledgements {.unnumbered}
+
+This research was supported by ...
+
+```{r, include = knitr::is_latex_output()}
+knitr::asis_output('# References {#references .unnumbered}')
+```

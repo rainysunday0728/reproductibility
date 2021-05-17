@@ -1,0 +1,9 @@
+name|type|parent|branches|progress
+job|stem|job|0|started
+job|stem|job|0|built
+tbl_end_use|stem|tbl_end_use|0|started
+tbl_end_use|stem|tbl_end_use|0|built
+p_end_use|stem|p_end_use|0|started
+p_end_use|stem|p_end_use|0|built
+paper|stem|paper|0|started
+paper|stem|paper|0|errored
